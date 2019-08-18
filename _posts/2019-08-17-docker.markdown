@@ -79,15 +79,20 @@ sudo chmod +x /usr/local/bin/docker-compose
 ```
 ### 创建Conterto的`docker-compose.yml`文件
 1. 首先创建一个工作目录`mycat`，并进入该目录。
+
 ```
 $ cd /usr/
 $ sudo mkdir mycat && cd mycat
 ```
+
 2. 在`mycat`目录中创建Concerto的`docker-compose.yml`文件。
+
 ```
 $ sudo vim docker-compose.yml
 ```
+
 3. 如下内容保存在`docker-compose.yml`文件中：
+
 ```
 version: '2'
 services:
@@ -118,12 +123,15 @@ services:
     ports:
       - "80:80"
 ```
+
 4. 最后使用使用`docker-compose`命令启动容器
+
 ```
 sudo docker-compose up -d
 ```
 
 此外，除了使用代码安装，还可以首先安装portainer操作界面，进行可视化安装。
+
 ```
 $ docker volume create portainer_data
 $ docker run -d -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
